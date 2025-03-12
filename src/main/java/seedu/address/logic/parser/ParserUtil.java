@@ -2,8 +2,11 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
@@ -13,6 +16,7 @@ import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Sport;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -121,4 +125,38 @@ public class ParserUtil {
         }
         return tagSet;
     }
+
+    /**
+     * Parses a {@code String sport} into a {@code Sport}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code sport} is invalid.
+     */
+    public static Sport parseSports(String sport) throws ParseException {
+        requireNonNull(sport);
+        String trimmedSport = sport.trim();
+
+        // Define a set of allowed sports (all in lowercase)
+        Set<String> validSports = new HashSet<>(Arrays.asList(
+                "soccer", "basketball", "tennis", "badminton", "cricket",
+                "baseball", "volleyball", "hockey", "rugby", "golf"
+        ));
+
+        if (!validSports.contains(trimmedSport.toLowerCase())) {
+            throw new ParseException("Invalid sport. Allowed sports: " + validSports);
+        }
+
+        return new Sport(trimmedSport);
+    }
+
+    public static List<Sport> parseSports(Collection<String> sports) throws ParseException {
+        requireNonNull(sports);
+        List<Sport> sportList = new ArrayList<>();
+        for (String sportStr : sports) {
+            // This call will validate each sport string individually.
+            sportList.add(parseSports(sportStr));
+        }
+        return sportList;
+    }
+
 }
