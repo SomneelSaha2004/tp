@@ -148,7 +148,9 @@ public class ParserUtil {
 
         return new Sport(trimmedSport);
     }
-
+    /**
+     * Parses {@code Collection<String> sports} into a {@code List<Sport>}.
+     */
     public static List<Sport> parseSports(Collection<String> sports) throws ParseException {
         requireNonNull(sports);
         List<Sport> sportList = new ArrayList<>();

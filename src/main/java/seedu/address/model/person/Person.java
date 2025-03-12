@@ -29,7 +29,7 @@ public class Person {
     private final List<Sport> sports = new ArrayList<>();
 
     /**
-     * Every field must be present and not null.
+     * Constructor for Person class returns an immutable Person object.
      */
     public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags, List<Sport> sports) {
         requireAllNonNull(name, phone, email, address, tags, sports);
@@ -40,7 +40,9 @@ public class Person {
         this.tags.addAll(tags);
         this.sports.addAll(sports);
     }
-
+    /**
+     * Constructor for Person class returns an immutable Person object.
+     */
     public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
