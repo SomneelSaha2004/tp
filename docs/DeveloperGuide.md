@@ -49,6 +49,7 @@ title: FitFriends Developer Guide
 
 * This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 * Some features such as addGame, deleteGame were reused from AddressBook-Level3.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
