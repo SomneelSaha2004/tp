@@ -83,7 +83,7 @@ dependencies {
 }
 
 shadowJar {
-    archiveFileName = '[CS2103-F12-1][FitFriends].jar'
+    archiveFileName = '[CS2103T-F12-1][FitFriends].jar'
 }
 
 defaultTasks 'clean', 'test'
