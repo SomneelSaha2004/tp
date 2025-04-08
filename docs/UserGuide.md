@@ -94,7 +94,7 @@ FitFriends is designed to help **sporty young adults** connect, organize and par
    java -jar FitFriends.jar
    ```
 
-4. **You should see** the FitFriends loading screen. Congratulations! You're ready to start.
+4. **You should see** the FitFriends interface. Congratulations! You're ready to start.
 
 #### Using the Graphical Interface
 
@@ -102,9 +102,7 @@ FitFriends is designed to help **sporty young adults** connect, organize and par
 
    > ⚠️ **If this doesn't work**: Your system might not have associated .jar files with Java. Use the CLI method above or right-click the file and select "Open with Java".
 
-2. **Enter commands** in the command box at the bottom of the window and press <kbd>Enter</kbd> to execute them.
-
-![FitFriends Main UI](images/main_ui.png)
+2. **You should see** the FitFriends interface. Congratulations! You're ready to start.
 
 ---
 ## <a id="using-fitfriends"></a> 🏋️️ Using FitFriends
@@ -117,7 +115,13 @@ FitFriends combines the power of a Command Line Interface (CLI) with the conveni
 - **Friend List**: Displays all your contacts with their information
 - **Person Card**: Shows detailed information for each contact
 
-![Interface Components](images/interface.png)
+**Before you start**, we suggest:
+> 💡 **Tip**: Expand the size of the GUI window by clicking on and dragging the sides outwards, which we have done in our examples below.
+
+> 💡 **Tip**: Switch to light and dark mode by clicking on the button at the top right of the interface.
+
+![FitFriends UI](images/main_ui_dark.png)
+![FitFriends UI](images/main_ui_light.png)
 
 ### Command Format
 
@@ -126,7 +130,7 @@ FitFriends combines the power of a Command Line Interface (CLI) with the conveni
 - Items with `...` after them can have multiple instances.
 - Parameters can be in any order.
 
-> 💡 **Tip**: Command words are case-sensitive, so you should only type `help`, and not `HELP`, `HeLp` or even `Help`.
+> ⚠️ **Note**: Command words are case-sensitive, so you should only type `help`, and not `HELP`, `HeLp` or even `Help`.
 
 ---
 ## <a id="basic-features"></a> 🌟 Basic Features
@@ -140,17 +144,18 @@ Need assistance? The help command gives you quick access to instructions.
 help
 ```
 
-When you type `help` and press <kbd>Enter</kbd>, you'll see a message with a link to this user guide.
+When you type `help` and press <kbd>Enter</kbd>, you'll see a pop-up that looks like this:
+
 
 ![Help Command](images/help_command.png)
 
 ---
 
-### Managing Contacts
+## Managing Contacts
 
-#### Adding a Friend
+### Add Contact
 
-Add your sports friends to your FitFriends list with details that matter for planning activities.
+Add contacts to your FitFriends list with details that help plan sporting activities.
 
 **Format**:
 ```
@@ -159,41 +164,41 @@ add n/NAME p/PHONE e/EMAIL a/ADDRESS [t/TAG] s/SPORT pc/POSTALCODE
 
 **Example**:
 ```
-add n/John Doe p/98765432 e/johnd@example.com a/John Street, #01-01 t/bestfriend s/tennis pc/123456
+add n/John Doe p/98765432 e/johnd@example.com a/John Street, #01-01 t/bestfriend s/tennis pc/119077
 ```
 
-This adds John Doe to your list of friends with his details and shows he plays tennis.
+This adds John Doe to your list of contacts with his details and shows he plays tennis:
 
 ![Adding a Friend](images/add_command.png)
 
 > ⚠️ **Notes**:
 > * Name: Names are case-insensitive (e.g., the names, Somneel and somneel, are the same and will not be allowed when adding a contact).
-> * Adding a friend places them in the alphabetically sorted position in the list.
-> * "s/o" will not be accepted as part of a name, we recommend you enter this part of your friend's name as "s_o", "so" or even "s o" instead.
+> * Adding a contact places them in the alphabetically sorted position in the list.
+> * "s/o" will not be accepted as part of a name, we recommend you enter this part of your contact's name as "s_o", "so" or even "s o" instead.
 > * Postal Code: Only valid Singapore postal codes are accepted.
 > * Sport: Only valid sports from "Valid Sports List" are allowed. You can add valid sports to this list by using the `createsport` command.
 > * Tag: Tags are optional. You can add as many tags as you want to a contact (e.g., `t/bestfriend t/colleague`). Tags help you categorize your contacts.
 
-#### Listing All Friends
+### List All Contacts
 
-View all your friends in one place.
+View all your contacts in one place.
 
 **Format**:
 ```
 list
 ```
 
-This displays all your friends in the left panel, sorted by alphabetical order.
+This displays all your contacts in the left panel, sorted by alphabetical order:
 
 ![Listing All Friends](images/list_command.png)
 
-> 💡 **List Tips**:
-> * You should run this command after adding, deleting or editing friends to see the updated list.
+> ⚠️ **Notes**:
+> * You should run this command after adding, deleting or editing contacts to see the updated list.
 > * You should also run this command after running find or findsport commands to view the full list.
 
-#### Editing a Friend
+### Edit Contact
 
-Update your friend's details as they change.
+Update your contact's details as they change.
 
 **Format**:
 ```
@@ -202,21 +207,21 @@ edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG] [pc/POSTALCODE]
 
 **Example**:
 ```
-edit 2 n/James Lee p/87654321 a/45 Sunset Blvd pc/018907
+edit 2 n/James Lee p/87654321 a/45 Sunset Blvd pc/119077
 ```
 
-This updates the 2nd friend in your current FitFriends list with a new name, phone number, address, and postal code.
+This updates the 2nd contact in your current FitFriends list with a new name, phone number, address, and postal code:
 
 ![Editing a Friend](images/edit_command.png)
 
-> 💡 **Edit Tips**:
+> ⚠️ **Notes**:
 > * Editing a tag will remove all existing tags as tags cannot be added sequentially (e.g., `edit t/bestfriend` followed by `edit t/colleague` will result in only the `colleague` tag remaining).
-> * Adding a friend places them in the alphabetically sorted position in the list.
-> * "s/o" will not be accepted as part of a name, we recommend you enter this part of your friend's name as "s_o", "so" or even "s o" instead.
+> * Adding a contact automatically places them in the alphabetically sorted position in the list.
+> * "s/o" will not be accepted as part of a name, we recommend you enter this part of your contact's name as "s_o", "so" or even "s o" instead.
 
-#### Locating Friends by Name
+### Find Contacts by Name
 
-Quickly find friends by searching for part of their name.
+Quickly find contacts by searching for part of their name.
 
 **Format**:
 ```
@@ -228,22 +233,21 @@ find KEYWORD [MORE_KEYWORDS]
 find james jake
 ```
 
-This will show all friends whose names contain "James" or "Jake".
+This will show all contacts whose names contain "James" or "Jake":
 
 ![Finding Friends](images/find_command.png)
 
-> ⚠️ **Note**:
+> ⚠️ **Notes**:
 > - Search keywords are case-insensitive
 > - Order of keywords doesn't matter
 > - Only full words are matched (e.g., "Han" won't match "Hans")
 > - Any contact matching at least one keyword will be shown
+> - If you run edit, delete, addsport, deletesport commands immediately after this command, these commands will apply to the contact listed at the index as shown by the find command. Use this to manage your contacts without having to search for them manually!
 
-> 💡 **Search Tip**: If you run edit, delete, addsport, deletesport commands immediately after this command, these commands will apply to the contact listed at the index as shown by the find command. Use this to manage your contacts without having to search for them manually!
 
+### Delete Contact
 
-#### Deleting a Friend
-
-Remove a friend from your FitFriends list.
+Remove contacts from your FitFriends list.
 
 **Format**:
 ```
@@ -255,29 +259,29 @@ delete INDEX
 delete 3
 ```
 
-This removes the 3rd friend in your current FitFriends list.
+This removes the 3rd contact in your current FitFriends list:
 
 ![Deleting a Friend](images/delete_command.png)
 
-#### Clearing All Entries
+### Clear All Entries
 
-Start fresh by removing all friends from your FitFriends list.
+Start fresh by removing all contacts and games from your FitFriends list.
 
 **Format**:
 ```
 clear
 ```
 
-> ⚠️ **Warning**: This action cannot be undone. All your contacts will be permanently removed.
+> ⚠️ **Warning**: This action cannot be undone. All your contacts and games will be permanently removed.
 
 ![Clearing All Entries](images/clear_command.png)
 
 ---
 
-### Sports Management
+## Sports Management
 
-#### Creating a Sport
-Add new sports to the global sports list for all contacts to use.
+### Add new Sport to Global List of Sports
+Add new sports to the global sports list that can be added to your contacts.
 
 **Format**:
 ```
@@ -289,14 +293,13 @@ createsport s/SPORT_NAME
 createsport s/archery
 ```
 
-This adds archery to the global sports list that can be assigned to contacts.
+This adds archery to the global sports list that can be assigned to your contacts:
 
 ![Creating a Sport](images/createsport_command.png)
 
-> ⚠️ **Note**:
-> * Sport names entered in commands are case-insensitive and will be stored and displayed in lowercase.
+> ⚠️ **Note**: Sport names entered in commands are case-insensitive and will be stored and displayed in lowercase.
 
-#### Listing All Sports
+### List All Sports
 View all available sports in the global sports list with their indices.
 
 **Format**:
@@ -304,15 +307,15 @@ View all available sports in the global sports list with their indices.
 listsports
 ```
 
-This displays all sports in alphabetical order with numbers for reference.
+This displays all sports in alphabetical order with numbers for reference:
 
 ![Listing All Sports](images/listsports_command.png)
 
-> 💡 **Tip**: Take note of the indices as they're needed when deleting sports from the global list.
+> ⚠️ **Note**: Take note of the indices as they're needed when deleting sports from the global list.
 
-#### Deleting a Sport from Global List of Sports
+### Delete Sport from Global List of Sports
 
-Remove a sport from the global sports list.
+Removes sport from the global sports list.
 
 **Format**:
 ```
@@ -324,15 +327,15 @@ deletesport INDEX
 deletesport 1
 ```
 
-This removes the first sport in the alphabetically sorted global sports list.
+This removes the first sport in the alphabetically sorted global sports list:
 
 ![Deleting a Sport globally](images/deletesport_global_command.png)
 
-> ⚠️ **Warning**: Removing a sport from the global list means it can no longer be assigned to contacts.
+> ⚠️ **Warning**: Removing a sport from the global list means it can no longer be assigned to a contact.
 
-#### Adding a Sport
+### Add Sport to Contact
 
-Record which sports your friends play to make planning activities easier.
+Record which sports your contacts play to make planning activities easier.
 
 **Format**:
 ```
@@ -344,15 +347,17 @@ addsport INDEX s/SPORT
 addsport 2 s/basketball
 ```
 
-This adds basketball to the list of sports played by the 2nd friend in your current FitFriends list.
+This adds basketball to the list of sports played by the 2nd contact in your current FitFriends list:
 
-![Adding a Sport to a friend](images/addsport_command.png)
+![Adding a Sport to a contact](images/addsport_command.png)
 
-> 💡 **Add Sport Tip**: You can only add one sport at a time. For multiple sports, use the command several times.
+> ⚠️ **Notes**:
+> * You can only add one sport at a time. For multiple sports, use the command several times.
+> * You can only add sports that exist in the global sports list.
 
-#### Deleting a Sport
+### Delete Sport from Contact
 
-Update your FitFriends list if a friend no longer plays a particular sport.
+Update your FitFriends list if a contact no longer plays a particular sport.
 
 **Format**:
 ```
@@ -364,13 +369,15 @@ deletesport INDEX s/SPORT
 deletesport 2 s/basketball
 ```
 
-This removes basketball from the 2nd friend's list of played sports.
+This removes basketball from the 2nd contact's list of played sports:
 
-![Deleting a Sport from a friend](images/deletesport_command.png)
+![Deleting a Sport from a contact](images/deletesport_command.png)
 
-#### Finding Friends by Sport
+> ⚠️ **Note**: This command has the same command name as deleting a sport from the global sports list. To prevent accidental deletion of sport from global sports list, ensure you add "s/SPORT" at the end of this command to delete a sport from a contact. 
 
-Discover which friends play specific sports—perfect for organizing game days!
+### Find Contacts by Sport
+
+Discover which contacts play specific sports—perfect for organizing game days!
 
 **Format**:
 ```
@@ -379,18 +386,18 @@ findsport s/SPORT [s/SPORT]
 
 **Example**:
 ```
-findsport s/basketball tennis
+findsport s/basketball s/tennis
 ```
 
-This shows all friends who play either basketball or tennis (or both).
+This shows all contacts who play either basketball or tennis (or both):
 
 ![Finding Friends by Sport](images/findsport_command.png)
 
-> 💡 **Pro-tip**: If you run edit, delete, addsport, deletesport commands immediately after this command, these commands will apply to the contact listed at the index as shown by the findsport command. Use this to manage your contacts without having to search for them manually!
+> 💡 **Tip**: If you run edit, delete, addsport, deletesport commands immediately after this command, these commands will apply to the contact listed at the index as shown by the findsport command. Use this to manage your contacts without having to search for them manually!
 
-#### Finding Friends by Sport and Location
+### Find Contacts by Sport and Location
 
-Find sports friends near a specific location—ideal for planning convenient meetups!
+Find sports contacts near a specific location—ideal for planning convenient meetups!
 
 **Format**:
 ```
@@ -399,29 +406,29 @@ findsport pc/POSTALCODE s/SPORT [s/SPORT]
 
 **Example**:
 ```
-findsport pc/259366 s/tennis s/hockey
+findsport pc/119077 s/tennis s/hockey
 ```
 
-This shows all friends who play tennis or hockey, sorted by their proximity to postal code 259366.
+This shows all contacts who play tennis or hockey, sorted by their proximity to postal code 119077:
 
 ![Finding by Sport and Location](images/findsport_location_command.png)
 
-> ⚠️ **Note**:
-> * Searche keywords are case-insensitive
+> ⚠️ **Notes**:
+> * Search keywords are case-insensitive
 > * Proximity is calculated by contact's postal code
 > * More than 1 sport can be included in the search by adding s/SPORT_NAME
 
-> 💡 **Find Sport Tips**:
+> 💡 **Tips**:
 > * Use this feature to find the optimal meeting spot for your sports game!
 > * If you run edit, delete, addsport, deletesport commands immediately after this command, these commands will apply to the contact listed at the index as shown by the findsport command. Use this to manage your contacts without having to search for them manually!
 
 ---
 
-#### Game Management
+## Game Management
 
-#### Adding Games
+### Add Game
 
-Organize your sports friends into games for different activities or events.
+Organize your contacts into games for different activities or events.
 
 **Format**:
 ```
@@ -430,38 +437,34 @@ addgame g/SPORT_NAME dt/DATE_TIME pc/POSTAL_CODE
 
 **Example**:
 ```
-addgame g/badminton dt/2025-04-01T15:00:00 pc/259366
+addgame g/badminton dt/2025-04-01T15:00:00 pc/119077
 ```
 
-This creates a new game called "badminton".
-
+This creates a new game called "badminton":
 
 ![Adding a Game](images/addgame_command.png)
 
-
-#### Deleting Games
+### Delete Game
 
 Remove Games you no longer need.
 
 **Format**:
 ```
-deletegame g/INDEX
+deletegame INDEX
 ```
 
 **Example**:
 ```
-deletegame g/1
+deletegame 1
 ```
 
-This deletes the "badminton" game.
-
+This deletes the game at index 1:
 
 ![Deleting a Game](images/deletegame_command.png)
 
+### Add Member to Game
 
-### Adding Members
-
-Adds friends as members to a particular game
+Adds contacts as members to a particular game
 
 **Format**:
 ```
@@ -470,24 +473,31 @@ addmember g/INDEX n/PERSON_NAME
 
 **Example**:
 ```
-addmember g/1 n/Mary Jane
+addmember g/1 n/John Doe
 ```
+This adds the contact with name John Doe to game at index 1:
 
-### Deleting Members
+![Adding a member](images/addmember_command.png)
+
+### Delete Member from Game
+
+Delete members from a particular game
 
 **Format**:
-
-Deletes friends as members from a particular game
 ```
 deletemember g/INDEX n/PERSON_NAME
 ```
 
 **Example**:
 ```
-deletegame g/1 n/Mary Jane
+deletemember g/1 n/John Doe
 ```
 
-### Editing Location of Existing Game
+This deletes the contact with name John Doe from game at index 1:
+
+![Deleting a member](images/deletemember_command.png)
+
+### Edit Location of Game
 
 **Format**:
 
@@ -498,33 +508,37 @@ editgamelocation g/INDEX pc/POSTAL_CODE
 
 **Example**:
 ```
-editgamelocation g/1 pc/119077
+editgamelocation g/1 pc/639798
 ```
+
+This changes the postal code of game at index 1 to 639798:
+
+![Editing Game Location](images/editgamelocation_command.png)
 ---
 
 ## <a id="command-summary"></a>📝 Command Summary
 
 | **Action**                   | **Format**                                                                    | **Example**                                                                           |
 |------------------------------|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| **Help**                     | `help`                                                                        | `help`                                                                                |
-| **Add Friend**               | `add n/NAME p/PHONE e/EMAIL a/ADDRESS [t/TAG] s/SPORT pc/POSTALCODE`          | `add n/John Doe p/98765432 e/johnd@example.com a/John St t/friend s/tennis pc/123456` |
-| **List Friends**             | `list`                                                                        | `list`                                                                                |
-| **Edit Friend**              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG] [pc/POSTALCODE]` | `edit 2 n/James Lee p/98765432 a/Block 123 pc/654321`                                 |
-| **Find by Name**             | `find KEYWORD [MORE_KEYWORDS]`                                                | `find James Jake`                                                                     |
-| **Delete Friend**            | `delete INDEX`                                                                | `delete 3`                                                                            |
-| **Clear All**                | `clear`                                                                       | `clear`                                                                               |
-| **Create Sport**             | `createsport s/SPORT_NAME`                                                    | `createsport s/archery`                                                               |
-| **List Sports**              | `listsports`                                                                  | `listsports`                                                                          |
-| **Delete Global Sport**      | `deletesport INDEX`                                                           | `deletesport 1`                                                                       |
-| **Add Sport**                | `addsport INDEX s/SPORT`                                                      | `addsport 1 s/tennis`                                                                 |
-| **Delete Sport**             | `deletesport INDEX s/SPORT`                                                   | `deletesport 2 s/basketball`                                                          |
-| **Find by Sport**            | `findsport s/SPORT [s/SPORT]`                                                 | `findsport s/basketball s/tennis`                                                     |
-| **Find by Sport & Location** | `findsport pc/POSTALCODE s/SPORT [s/SPORT]`                                   | `findsport pc/018907 s/tennis s/hockey`                                                 |
-| **Add Game**                 | `addgame g/SPORT_NAME dt/DATE_TIME pc/POSTAL_CODE`                            | `addgame g/volleyball dt/2025-04-04T15:30:00 pc/259366`                               |
-| **Delete Game**              | `deletegame g/INDEX`                                                          | `deletegame g/1`                                                                      |
-| **Add Member**               | `addmember g/INDEX n/PERSON_NAME`                                             | `addmember g/1 n/Alice Pauline`                                                       |
-| **Delete Member**            | `deletemember g/INDEX n/PERSON_NAME`                                          | `deletemember g/1 n/Alice Pauline`                                                    |
-| **Edit Game Location**            | `editgamelocation g/INDEX pc/POSTAL_CODE`                                          | `editgamelocation g/1 pc/119077`                                                    |
+| **Viewing Help**                     | `help`                                                                        | `help`                                                                                |
+| **Add Contact**               | `add n/NAME p/PHONE e/EMAIL a/ADDRESS [t/TAG] s/SPORT pc/POSTALCODE`          | `add n/John Doe p/98765432 e/johnd@example.com a/John St t/friend s/tennis pc/119077` |
+| **List All Contacts**             | `list`                                                                        | `list`                                                                                |
+| **Edit Contact**              | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG] [pc/POSTALCODE]` | `edit 2 n/James Lee p/98765432 a/Block 123 pc/119077`                                 |
+| **Find Contacts by Name**             | `find KEYWORD [MORE_KEYWORDS]`                                                | `find James Jake`                                                                     |
+| **Delete Contact**            | `delete INDEX`                                                                | `delete 3`                                                                            |
+| **Clear All Entries**                | `clear`                                                                       | `clear`                                                                               |
+| **Add new Sport to Global List of Sports**             | `createsport s/SPORT_NAME`                                                    | `createsport s/archery`                                                               |
+| **List All Sports**              | `listsports`                                                                  | `listsports`                                                                          |
+| **Delete Sport from Global List of Sports**      | `deletesport INDEX`                                                           | `deletesport 1`                                                                       |
+| **Add Sport to Contact**                | `addsport INDEX s/SPORT`                                                      | `addsport 1 s/tennis`                                                                 |
+| **Delete Sport from Contact**             | `deletesport INDEX s/SPORT`                                                   | `deletesport 2 s/basketball`                                                          |
+| **Find Contacts by Sport**            | `findsport s/SPORT [s/SPORT]`                                                 | `findsport s/basketball s/tennis`                                                     |
+| **Find Contacts by Sport and Location** | `findsport pc/POSTALCODE s/SPORT [s/SPORT]`                                   | `findsport pc/119077 s/tennis s/hockey`                                                 |
+| **Add Game**                 | `addgame g/SPORT_NAME dt/DATE_TIME pc/POSTAL_CODE`                            | `addgame g/volleyball dt/2025-04-04T15:30:00 pc/119077`                               |
+| **Delete Game**              | `deletegame INDEX`                                                          | `deletegame 1`                                                                      |
+| **Add Member to Game**               | `addmember g/INDEX n/PERSON_NAME`                                             | `addmember g/1 n/Alice Pauline`                                                       |
+| **Delete Member from Game**            | `deletemember g/INDEX n/PERSON_NAME`                                          | `deletemember g/1 n/Alice Pauline`                                                    |
+| **Edit Location of Game**            | `editgamelocation g/INDEX pc/POSTAL_CODE`                                          | `editgamelocation g/1 pc/119077`                                                    |
 
 
 
@@ -534,7 +548,7 @@ editgamelocation g/1 pc/119077
 **Q: Can I use FitFriends to find sports facilities?**
 A: Currently, FitFriends doesn't directly provide information about sports facilities, but it helps you coordinate with friends who live near specific locations by using findsport with postal codes.
 
-**Q: How many sports can I add per contact?**
+**Q: How many sports can I add per friend?**
 A: There is no limit! Add as many sports as your friend plays.
 
 **Q: Can I import contacts from my phone?**
@@ -551,7 +565,7 @@ A: This feature is coming in our next update. Stay tuned!
 - Check your spelling and format
 - Refer to the Command Summary table for correct syntax
 
-**Stil need help?** Visit our [support page](https://github.com/AY2425S2-CS2103T-F12-1/tp/issues) or email `fitfriends.support@gmail.com`.
+**Still need help?** Visit our [support page](https://github.com/AY2425S2-CS2103T-F12-1/tp/issues) or email `fitfriends.support@gmail.com`.
 
 ---
 ## <a id="references"></a>📚 References

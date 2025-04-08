@@ -83,7 +83,7 @@ dependencies {
 }
 
 shadowJar {
-    archiveFileName = 'addressbook.jar'
+    archiveFileName = 'FitFriends.jar'
 }
 
 defaultTasks 'clean', 'test'
