@@ -97,11 +97,17 @@ public class DeleteSportCommand extends Command {
 
             String sportToDelete = sortedSports.get(targetIndex.getZeroBased());
 
-            // Delete the sport from the global list
-            Sport.deleteValidSport(targetIndex.getZeroBased());
-
-            // Remove this sport from all people who have it
+            // Check if anyone has this sport as the only sport remaining
             List<Person> allPersons = model.getFilteredPersonList();
+            for (Person person : allPersons) {
+                Sport sport = new Sport(sportToDelete);
+                if (person.getSports().contains(sport) && person.getSports().size() == 1) {
+                    throw new CommandException(String.format(
+                            "Error, there is at least one person who has %s as the only sport. "
+                                    + "Thus deletion is not allowed", sportToDelete));
+                }
+            }
+
             for (Person person : allPersons) {
                 Sport sport = new Sport(sportToDelete);
                 if (person.getSports().contains(sport)) {
@@ -120,6 +126,9 @@ public class DeleteSportCommand extends Command {
                 }
             }
 
+            // Delete the sport from the global list
+            Sport.deleteValidSport(targetIndex.getZeroBased());
+
             return new CommandResult(String.format(MESSAGE_DELETE_SPORT_SUCCESS_GLOBAL, sportToDelete));
         } else {
             // Delete the specified sport from a person
@@ -132,6 +141,8 @@ public class DeleteSportCommand extends Command {
             Person personToEdit = lastShownList.get(targetIndex.getZeroBased());
             List<Sport> currentSports = personToEdit.getSports();
 
+
+
             // Check if the person has the specified sport
             if (!currentSports.contains(sport)) {
                 throw new CommandException(
@@ -140,6 +151,10 @@ public class DeleteSportCommand extends Command {
 
             // Create updated list of sports
             List<Sport> updatedSports = new ArrayList<>(currentSports);
+            if (updatedSports.size() == 1) {
+                throw new CommandException(String.format(
+                        MESSAGE_CANNOT_DELETE_SPORT, sport, personToEdit.getName().fullName));
+            }
             updatedSports.remove(sport);
 
             // Create edited person with updated sports
