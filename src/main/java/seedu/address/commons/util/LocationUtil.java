@@ -43,6 +43,7 @@ public class LocationUtil {
             URL resource = LocationUtil.class.getClassLoader().getResource("locationdata/postal_code_data.json");
             requireNonNull(resource, "Resource not found");
 
+            //code provided by GitHub Copilot
             try (InputStream inputStream = LocationUtil.class.getClassLoader()
                                  .getResourceAsStream("locationdata/postal_code_data.json")) {
                 requireNonNull(inputStream, "Resource not found");
