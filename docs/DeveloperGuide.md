@@ -49,7 +49,12 @@ title: FitFriends Developer Guide
 
 * This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
 * Some features such as addGame, deleteGame were reused from AddressBook-Level3.
-
+* Code Reuse Declaration: `postal_code_data.json` found in resources/locationdata was taken from the following[ public repository](https://github.com/xkjyeah/singapore-postal-codes). The data provided has been used for validation and distance calculation for sorting across the app. However, all code required to use it in our app has been written by the team, with the help of AI tools.
+* AI Declaration: This project has been developed with the assistance of artificial intelligence (AI) tools, which were used regularly throughout the development process. These AI tools assisted in generating ideas, reviewing and completing code, and improving documentation. All AI-generated content was carefully reviewed and refined by the project team to ensure quality, accuracy, and consistency with our project objectives. The integration of AI technologies helped streamline our workflows and foster innovation while maintaining full human oversight and decision-making in the final outputs.
+> ⚠️ **AI tools and Usages**:
+> * ChatGPT: Darren, Lucas and Somneel
+> * Cursor: Isaac
+> * GitHub Copilot: Noah
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
